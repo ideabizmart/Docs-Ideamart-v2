@@ -1,11 +1,82 @@
 site_name: Ideamart Documentation
-theme:
-  name: material
+site_description: Document site for Ideamart
+
+
 nav:
   - Home: index.md
-  - Features: feature.md
+  - IdeaPro Tutorials:
+      - "Provisioning": ideapro-tutorials/ideapro-provisioning.md
+      - "SMS API": ideapro-tutorials/sms-api-provisioning.md
+      - "Charging API": ideapro-tutorials/charging-api.md
+  - Developer Docs:
+      - "Charging API": developer-docs/charging-api.md
+      - "SMS API": developer-docs/sms-api.md
+      - "Subscription API": developer-docs/subscription-api.md
+      - "USSD API": developer-docs/ussd-api.md
+      - "OTP API": developer-docs/otp-api.md
+      - "Response Codes": developer-docs/response-codes.md
+  - IdeaApp Tutorials:
+      - "IdeaApp Introduction": ideaapp-tutorials/introduction.md
+      - "IdeaApp Services": ideaapp-tutorials/services.md
+      - "IdeaApp Alert": ideaapp-tutorials/alert.md
+      - "IdeaApp Contact": ideaapp-tutorials/contact.md
+      - "IdeaApp Voting": ideaapp-tutorials/voting.md
+  - Video Tutorials: video-tutorials.md
+  - FAQ: faq.md
+  - Help/Contact Us: help.md
+
+theme:
+  name: material
+  features:
+    - navigation.tabs        # Enables horizontal top menu
+    - navigation.tabs.sticky # Keeps top menu visible on scroll
+    - navigation.sections    # Groups items into collapsible sections in the sidebar
+    - navigation.expand      # Expands sidebar sections by default
+  icon:
+    repo: fontawesome/brands/github
+  palette: 
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+      primary: teal #, [red, pink, purple, deep, purple, indigo, blue, light blue, cyan, teal, green, light green, lime, yellow, amber, orange, deep orange, brown, grey, blue, grey, black, white]
+      accent: cyan # [red, pink, purple, deep, purple, indigo, blue, light, blue, cyan, teal, green, light, green, lime, yellow, amber, orange, deep orange]
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal #, [red, pink, purple, deep, purple, indigo, blue, light blue, cyan, teal, green, light green, lime, yellow, amber, orange, deep orange, brown, grey, blue, grey, black, white]
+      accent: cyan # [red, pink, purple, deep, purple, indigo, blue, light, blue, cyan, teal, green, light, green, lime, yellow, amber, orange, deep orange]
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
 markdown_extensions:
-  - toc:
-      permalink: true
+  - md_in_html
   - admonition
+  - pymdownx.details
+  - pymdownx.keys
   - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables                  # Enables better table rendering
+  - pymdownx.superfences    # Fixes issues with code blocks
+  - pymdownx.highlight      # Enables syntax highlighting
+  - pymdownx.inlinehilite   # Enables inline code highlighting
+  - pymdownx.extra     
+  
+extra:
+  generator: false
+  analytics:
+    provider: google
+    property: G-SCWBS5Y3CJ
+  social:
+    - icon: fontawesome/brands/youtube
+      link: https://linkedin.com/in/your-profile
+    - icon: fontawesome/brands/instagram
+      link: https://linkedin.com/in/your-profile
+    - icon: fontawesome/brands/facebook
+      link: https://linkedin.com/in/your-profile
