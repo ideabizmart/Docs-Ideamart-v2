@@ -1,14 +1,14 @@
-﻿# Home
+﻿# Welcome to Ideamart Developer Docs
 
-Ideamart is a telecommunication based platform which exposes APIs to create services on their own or to support build their own businesses. Below are the steps for you to get started with Ideamart APIs. 
+Ideamart is a telecom-based platform that empowers developers, entrepreneurs, and businesses to build and scale services using powerful APIs. Whether you’re launching a new idea or integrating telco services into an existing product, this is your starting point.
 
-#### Steps
+#### Get Started in 5 Simple Steps
 
-1.  Create an Ideamart account.
-2.  Provision an Ideamart service application.
+1.  Create your Ideamart account.
+2.  Provision your application (IdeaApp or IdeaPro).
 3.  Submit for approval
 4.  Test in limited production
-5.  Move to active production
+5.  Go live in active production
 
 For **IdeaApp** service providers, this documentation will include the tutorial documents required for provisioning an IdeaApp.
 
