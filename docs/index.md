@@ -1,6 +1,6 @@
 ﻿# Home
 
-Ideamart is a telecommunication based platform which exposes APIs to create services on their own or to support build their own businesses. Below are the steps for you to get started with Ideamart APIs. hihi
+Ideamart is a telecommunication based platform which exposes APIs to create services on their own or to support build their own businesses. Below are the steps for you to get started with Ideamart APIs. 
 
 #### Steps
 
