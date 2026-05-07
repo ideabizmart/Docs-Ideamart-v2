@@ -13,7 +13,7 @@ Complete API documentation for the OmniAI platform, providing access to state-of
   - [Image Generation](#image-generation)
 - [Error Codes](#error-codes)
 - [Rate Limits](#rate-limits)
-- [Sample Code & SDK Resources](#sample-code-and-sdk-resources)
+- [Sample Code and SDK Resources](#sample-code-and-sdk-resources)
 ---
 
 ## Overview
@@ -533,7 +533,7 @@ Developers can view and download the sample code using the Google Drive link bel
 4. Refer to the API documentation for endpoint details, request parameters, and response formats.
 5. Test the integration in your development environment before moving to production.
 
-> **Note:** Please ensure that your API key is stored securely and is not committed to any public repository or shared with unauthorized parties.
+**Note:** Please ensure that your API key is stored securely and is not committed to any public repository or shared with unauthorized parties.
 ---
 
 ## Support
