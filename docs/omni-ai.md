@@ -13,7 +13,7 @@ Complete API documentation for the OmniAI platform, providing access to state-of
   - [Image Generation](#image-generation)
 - [Error Codes](#error-codes)
 - [Rate Limits](#rate-limits)
-- [Sample Code & SDK Resources](#sample-code-&-sdk-resources)
+- [Sample Code & SDK Resources](#sample-code-and-sdk-resources)
 ---
 
 ## Overview
@@ -512,7 +512,7 @@ Failed to forward webhook request. The request to the LLM provider failed due to
 Rate limits reset every minute. When you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Check the `Retry-After` header for the recommended wait time before making additional requests.
 
 ---
-## Sample Code & SDK Resources
+## Sample Code and SDK Resources
 
 To get started quickly with the Omni AI platform, we have provided sample code and reference implementation files that can be accessed through the link below.
 
