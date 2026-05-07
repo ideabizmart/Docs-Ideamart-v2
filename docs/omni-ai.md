@@ -512,6 +512,29 @@ Failed to forward webhook request. The request to the LLM provider failed due to
 Rate limits reset every minute. When you exceed the rate limit, you'll receive a `429 Too Many Requests` response. Check the `Retry-After` header for the recommended wait time before making additional requests.
 
 ---
+## Sample Code & SDK Resources
+
+To get started quickly with the Omni AI platform, we have provided sample code and reference implementation files that can be accessed through the link below.
+
+These resources include example integrations that demonstrate how to connect with Omni AI APIs, authenticate requests, and execute supported AI capabilities such as chat completions and image generation.
+
+---
+### Access the Code Repository
+
+Developers can view and download the sample code using the Google Drive link below:
+
+[Download Omni AI Sample Code](downloads/omni-ai-sample-code.zip)
+
+### How to Use
+
+1. Open the Google Drive link.
+2. Download the required sample files or project folder.
+3. Update the configuration with your Omni AI API key.
+4. Refer to the API documentation for endpoint details, request parameters, and response formats.
+5. Test the integration in your development environment before moving to production.
+
+> **Note:** Please ensure that your API key is stored securely and is not committed to any public repository or shared with unauthorized parties.
+---
 
 ## Support
 
