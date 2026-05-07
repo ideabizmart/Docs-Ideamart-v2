@@ -514,7 +514,7 @@ Rate limits reset every minute. When you exceed the rate limit, you'll receive a
 ---
 ## Sample Code and SDK Resources
 
-To get started quickly with the Omni AI platform, we have provided sample code and reference implementation files that can be accessed through the link below.
+To get started quickly with the Omni AI platform, please request assistance from the Ideamart team for the sample code.
 
 These resources include example integrations that demonstrate how to connect with Omni AI APIs, authenticate requests, and execute supported AI capabilities such as chat completions and image generation.
 
