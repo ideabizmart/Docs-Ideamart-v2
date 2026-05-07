@@ -521,13 +521,11 @@ These resources include example integrations that demonstrate how to connect wit
 ---
 ### Access the Code Repository
 
-Developers can view and download the sample code using the Google Drive link below:
-
-[Download Omni AI Sample Code](downloads/omni-ai-sample-code.zip)
+Please contact the Ideamart team for the sample code
 
 ### How to Use
 
-1. Open the Google Drive link.
+1. Request for the sample code.
 2. Download the required sample files or project folder.
 3. Update the configuration with your Omni AI API key.
 4. Refer to the API documentation for endpoint details, request parameters, and response formats.
