@@ -13,7 +13,7 @@ Complete API documentation for the OmniAI platform, providing access to state-of
   - [Image Generation](#image-generation)
 - [Error Codes](#error-codes)
 - [Rate Limits](#rate-limits)
-
+- [Sample Code & SDK Resources](#sample-code-&-sdk-resources)
 ---
 
 ## Overview
