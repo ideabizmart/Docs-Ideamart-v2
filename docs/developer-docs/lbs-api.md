@@ -1,4 +1,4 @@
-# 5. LBS API
+# LBS API
 
 The LBS API enables applications on Ideamart to find a user's location in real time, including users with feature phones. It allows applications to send and receive location requests through a REST-based API and build location-aware, real-time services.
 
