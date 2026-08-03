@@ -14,6 +14,7 @@ nav:
       - "Subscription API": developer-docs/subscription-api.md
       - "USSD API": developer-docs/ussd-api.md
       - "OTP API": developer-docs/otp-api.md
+      - "LBS API": developer-docs/lbs-api.md
       - "Response Codes": developer-docs/response-codes.md
   - IdeaApp Tutorials:
       - "IdeaApp Introduction": ideaapp-tutorials/introduction.md
