@@ -16,7 +16,6 @@ The Get Location service consists of a location request and a location response.
 
 | Environment | Endpoint |
 |---|---|
-| Simulator | [http://localhost:7000/lbs/locate](http://localhost:7000/lbs/locate) |
 | Production | [https://api.dialog.lk/lbs/locate](https://api.dialog.lk/lbs/locate) |
 
 ## 5.1 Request
