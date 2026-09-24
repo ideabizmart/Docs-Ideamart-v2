@@ -16,6 +16,12 @@ nav:
       - "OTP API": developer-docs/otp-api.md
       - "LBS API": developer-docs/lbs-api.md
       - "Response Codes": developer-docs/response-codes.md
+      - "MCP Integration":
+          - "Common Guide": MCP/guide-common.md
+          - "Ideabiz Guide": MCP/guide-ideabiz.md
+          - "Ideamart Guide": MCP/guide-ideamart.md
+          - "Client Configuration": MCP/mcp-client-config.md
+          - "Troubleshooting": MCP/troubleshooting.md
   - IdeaApp Tutorials:
       - "IdeaApp Introduction": ideaapp-tutorials/introduction.md
       - "IdeaApp Services": ideaapp-tutorials/services.md
