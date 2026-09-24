@@ -24,6 +24,11 @@ nav:
       - "IdeaApp Voting": ideaapp-tutorials/voting.md
   - Video Tutorials: video-tutorials.md
   - OMNI AI: omni-ai.md
+  - MCP Integration:
+      - "Common Guide": MCP/guide-common.md
+      - "Ideamart Guide": MCP/guide-ideamart.md
+      - "Client Configuration": MCP/mcp-client-config.md
+      - "Troubleshooting": MCP/troubleshooting.md
   - FAQ: faq.md
   - Help/Contact Us: help.md
 
