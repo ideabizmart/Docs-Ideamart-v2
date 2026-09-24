@@ -18,7 +18,6 @@ nav:
       - "Response Codes": developer-docs/response-codes.md
       - "MCP Integration":
           - "Common Guide": MCP/guide-common.md
-          - "Ideabiz Guide": MCP/guide-ideabiz.md
           - "Ideamart Guide": MCP/guide-ideamart.md
           - "Client Configuration": MCP/mcp-client-config.md
           - "Troubleshooting": MCP/troubleshooting.md
