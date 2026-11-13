@@ -6,6 +6,25 @@ Connect your AI coding assistant to Ideamart APIs via MCP. Send SMS, manage subs
 
 ---
 
+## Ask the Ideamart Docs Assistant
+
+The documentation site includes an **Ask Ideamart** chatbot in the bottom-right corner.
+It discovers the `ideamart_docs` MCP tool and uses it to look up guidance about APIs,
+callbacks, status codes, number masking, and integration rules.
+
+The assistant is documentation-only: it does not send SMS, change subscriptions, or
+charge a subscriber. The static webpage sends requests to a same-origin
+`/api/ideamart-mcp` proxy, which adds MCP authorization server-side. Configure the
+deployment secret `IDEAMART_MCP_AUTHORIZATION` as `Bearer <your-mcp-token>`; never put
+that value in browser JavaScript, Markdown, or the repository. The VS Code MCP clients
+can continue using the prompted token in `.vscode/mcp.json`.
+
+If MCP is temporarily unavailable, the assistant falls back to the generated MkDocs search
+index and returns relevant passages from this documentation. This fallback is local to the
+site and does not require another API key or plugin.
+
+---
+
 ## Prerequisites
 
 1. **MCP Token** — Get one at `https://mcp.ideamart.io/auth/login`
@@ -570,12 +589,6 @@ Echo2 (https://echo.idmrt.dev/) captures MO requests without running your own se
    }
    ```
 
-### Echo2 Notes:
-- Echo2 does NOT auto-respond S1000 — USSD sessions will timeout (use for testing only)
-- Region-restricted — use session code from colleague if blocked
-- After capturing masked MSISDN, switch callback back to your real server
-- Works for all callback types: SMS MO, DLR, USSD, Subscription, Charging
-
 ---
 
 ## Callbacks Summary
@@ -625,8 +638,6 @@ Echo2 (https://echo.idmrt.dev/) captures MO requests without running your own se
 | E1851 | OTP expired (60 min) |
 | E1852 | Max attempts reached |
 | E1853 | No active OTP for reference |
-
-> **Important:** Ideamart returns HTTP 200 for ALL responses. Always check `statusCode` in the body.
 
 ---
 

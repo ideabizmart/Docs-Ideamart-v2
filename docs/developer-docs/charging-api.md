@@ -35,24 +35,24 @@ This service provides the remaining balance amount of a desired user with other 
 Sample request of balance query is below.
 
 	
-		 `{
+	{
     "applicationId":"APP_000018", 
     "password":"95904999aa8edb0c038b3295fdd271de", 
     "subscriberId":"************"
-}`
+    }
 
 ### Response
 
 Sample response of balance query is below.
 
 	
-		 ```{
+	{
     "chargeableBalance":"300.0", 
     "statusCode":"S1000", 
     "statusDetail":"Success", 
     "accountStatus":"Active", 
     "accountType":"Pre Paid"
-}``` 
+    }
 
 ### More information on Balance Query service
 
@@ -69,13 +69,13 @@ Following are all the request parameters of the balance query service.
 Below is a comprehensive sample of the balance query request.
 
 		
-			 ```{
+	{
     "applicationId":"APP_000018", 
     "password":"95904999aa8edb0c038b3295fdd271de", 
     "subscriberId":"94776351232",                       
     "accountId":"12345",
     "currency":"LKR"
-}``` 
+    }
 
 Following are all the response parameters of balance query service.
 
@@ -90,13 +90,13 @@ Following are all the response parameters of balance query service.
 Below is a comprehensive sample for the balance query response.
 
 				
-					 ```{
- "chargeableBalance":"300.0", 
- "statusCode":"S1000", 
- "statusDetail":"Success", 
- "accountStatus":"Active", 
- "accountType":"Pre Paid"  
-}``` 
+					 {
+                        "chargeableBalance":"300.0", 
+                        "statusCode":"S1000", 
+                        "statusDetail":"Success", 
+                        "accountStatus":"Active", 
+                        "accountType":"Pre Paid"  
+                    }
 
 ## Direct Debit
 
@@ -122,7 +122,7 @@ This is used to charge a specific amount from the subscriber's account for the s
 Following is a sample request for direct debit service.
 
 				
-					 ```{   
+	{   
     "applicationId":"APP_000017", 
     "password":"95904999aa8edb0c038b3295fdd271de",
     "externalTrxId":"12345678901234567890123456789012",
@@ -130,23 +130,23 @@ Following is a sample request for direct debit service.
     "accountId":"123456",
     "currency":"USD",
     "amount":"1"
-}``` 
+    }
 
 ### Response
 
 Following is a sample response for direct debit service.
 
 				
-					 ```
-{
-    "statusCode":"S1000", 
-    "timeStamp":"2012-07-30T12:48:10-0400",
-    "shortDescription":"Long Description",
-    "statusDetail":"Success",
-    "externalTrxId":"12345678901234567890123456789012",
-    "longDescription":"short Description",
-    "internalTrxId":"321"   
-}``` 
+					 
+                    {
+                    "statusCode":"S1000", 
+                    "timeStamp":"2012-07-30T12:48:10-0400",
+                    "shortDescription":"Long Description",
+                    "statusDetail":"Success",
+                    "externalTrxId":"12345678901234567890123456789012",
+                    "longDescription":"short Description",
+                    "internalTrxId":"321"   
+                    }
 
 ### More information on Direct Debit
 
@@ -166,7 +166,7 @@ Following are all the request parameters of the direct debit service.
 Below is a comprehensive sample for the direct debit request.
 
 				
-					 ```{
+	{
     "applicationId":"APP_000017",
     "password":"95904999aa8edb0c038b3295fdd271de",
     "externalTrxId":"12345678901234567890123456789012",
@@ -175,7 +175,7 @@ Below is a comprehensive sample for the direct debit request.
     "paymentInstrument":"MobileAccount"
     "currency":"USD",
     "amount":"1"
-}``` 
+    }
 
 Following are all the response parameters of the direct debit service.
 
@@ -191,7 +191,7 @@ Following are all the response parameters of the direct debit service.
 Below is a comprehensive sample for the direct debit response.
 
 				
-					 ```{
+	{
     "statusCode":"S1000", 
     "timeStamp":"2012-07-30T12:48:10-0400", 
     "shortDescription":"short Description", 
@@ -199,4 +199,4 @@ Below is a comprehensive sample for the direct debit response.
     "externalTrxId":"12345678901234567890123456789012", 
     "longDescription":"Long Description", 
     "internalTrxId":"321"
-}```
+    }
