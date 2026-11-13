@@ -25,7 +25,7 @@ In that case, if the developer has no plans to use any other MO messages sent to
 
 But, in the case your service requires to receive messages from the user properly and provide any means of response accordingly, it is required to listen and catch the request which will be routed by Ideamart platform to the endpoint by given at **Message Receiving URL** in developer's hosting space.
 
-Sample request body can be found at SMS API developer documentation of this site [SMS API Documentation](../SMS_API/index.html)
+Sample request body can be found at SMS API developer documentation of this site [SMS API Documentation](../developer-docs/sms-api.md)
 
 Hint: Always **test your mobile originated SMS** before you go to production by saving your listened data to a db and understand the capability of this API.
 
@@ -47,7 +47,7 @@ If developer toggles this ON, then the platform will need a receiving endpoint w
 
 ![Delivery report](https://drive.google.com/uc?id=1iQxPm3ifam50nADSjH8iirPsKG4eBKxX)
 
-The request body to handle the delivery report is included in the SMS API developer documentation of this site [SMS API Documentation](../SMS_API/index.html)
+The request body to handle the delivery report is included in the SMS API developer documentation of this site [SMS API Documentation](../developer-docs/sms-api.md)
 
 ### Enable Subscription
 
