@@ -99,8 +99,6 @@ Common issues and solutions for the Ideamart MCP Platform.
 4. Add the IP from step 1
 5. Wait a few minutes for propagation, then retry
 
-> **Note:** This is only needed for Ideamart tools, not Ideabiz tools. Each Ideamart application must separately whitelist the IP.
-
 ---
 
 ### MSISDNs in responses are hashed/masked

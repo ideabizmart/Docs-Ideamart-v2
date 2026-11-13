@@ -31,8 +31,8 @@ Sample request (register):
 
 ```json
 {
-  "applicationId": "APP_001807",
-  "password": "cf2b9e361c13bc54b86d3c8180b0fd242",
+  "applicationId": "YOUR_APPLICATION_ID",
+  "password": "YOUR_PASSWORD",
   "version": "1.0",
   "action": "1",
   "subscriberId": "tel:***************"
@@ -43,8 +43,8 @@ Sample request (unregister):
 
 ```json
 {
-  "applicationId": "APP_001807",
-  "password": "cf2b9e361c13bc54b86d3c8180b0fd242",
+  "applicationId": "YOUR_APPLICATION_ID",
+  "password": "YOUR_PASSWORD",
   "version": "1.0",
   "action": "0",
   "subscriberId": "tel:94771234567"
@@ -87,7 +87,7 @@ Sample response (unregister):
 | `password` | Password as received when provisioned | `string` | Mandatory |
 | `version` | API version (e.g., `1.0`, `2.0`, etc.) | `string` | Optional (if not specified, validated against the latest version) |
 | `action` | Whether the subscriber should opt in or opt out | `enum` (`0` = Opt Out, `1` = Opt In) | Mandatory |
-| `subscriberId` | Telephone number of the user to be subscribed. Use `tel:` for MSISDN (e.g., `tel:94771234567`). **Note:** `tel:` might be a masked number depending on the application. | `string` | Mandatory |
+| `subscriberId` | Telephone number of the user to be subscribed. Use `tel:` for MSISDN (e.g., `tel:94771234567`). | `string` | Mandatory |
 
 #### Register / Unregister response parameters
 
@@ -138,13 +138,11 @@ Sample request:
 
 ```json
 {
-  "applicationId": "APP_001807",
-  "password": "cf2b9e361c13bc54b86d3c8180b0fd242",
+  "applicationId": "YOUR_APPLICATION_ID",
+  "password": "YOUR_PASSWORD",
   "subscriberId": "tel:94771234567"
 }
 ```
-
-> Note: Your original text had `te:94771234567`. This is likely a typo; the standard format is `tel:`.
 
 ### Response
 
@@ -167,7 +165,7 @@ Sample response:
 |---|---|---|---|
 | `applicationId` | Application ID as received when provisioned | `string` | Mandatory |
 | `password` | Password as received when provisioned | `string` | Mandatory |
-| `subscriberId` | Address of the subscriber (e.g., `tel:94771234567`). **Note:** might be a masked number depending on the application. | `string` | Mandatory |
+| `subscriberId` | Address of the subscriber (e.g., `tel:94771234567`). | `string` | Mandatory |
 
 #### Subscription status response parameters
 
@@ -197,7 +195,7 @@ Sample request:
 ```json
 {
   "applicationId": "APP_001807",
-  "password": "cf2b9e361c13bc54b86d3c8180b0fd242"
+  "password": "YOUR_PASSWORD"
 }
 ```
 

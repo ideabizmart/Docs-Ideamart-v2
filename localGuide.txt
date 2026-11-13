@@ -1,0 +1,2 @@
+py -m mkdocs serve
+mkdocs build

@@ -1,254 +1,239 @@
 ﻿# SMS API
 
-The SMS REST Service provides operations for sending an SMS to Ideamart platform and to receive an SMS from the platform.
+The SMS REST Service provides operations for sending an SMS to the Ideamart platform and receiving an SMS from the platform.
 
-The SMS Interface allows applications to send and receive SMS messages using an HTTP-based API.
+The SMS interface allows applications to send and receive SMS messages using an HTTP-based API.
 
-Supported services are as follows:
+## Supported Services
 
--   **Send Service** This is for the mobile application to send messages to subscribed users. Also known as MT (Mobile Terminated).
-    
--   **Receive Service** This service is to retrieve the SMS sent to the application by any user.
-    
--   **Status Report Service** If an application had requested for a status report from Ideamart, then the platform will initiate the status report service to hand over the report to the application.
-    
+- **Send Service:** Sends messages from a mobile application to subscribed users. Also known as MT (Mobile Terminated).
+- **Receive Service:** Receives SMS messages sent to the application by users.
+- **Status Report Service:** Sends delivery status reports to the application when requested.
 
-### URL
+## API Endpoint
 
-	
-`https://api.ideamart.io/sms/send` 
-
-### Content Type
-
-	
-`application/json` 
-
-### Method
-
-	
-`POST` 
+| Property | Value |
+| --- | --- |
+| URL | `https://api.ideamart.io/sms/send` |
+| Content Type | `application/json` |
+| Method | `POST` |
 
 ## Send Service
 
-This service lets the user send SMS to one or more terminals (phones or any SMS-enabled device) from their application. An application wishing to initiate an MT SMS message should use this operation type.
+This service lets an application send SMS messages to one or more terminals (phones or any SMS-enabled device). An application wishing to initiate an MT SMS message should use this operation.
 
 ### Request
 
-Below is a sample request of send service.
+Sample send-service request:
 
-	
-```
+```json
 {
-    "message":"Hello",
-    "destinationAddresses":["tel:*************"],
-    "password":"password",
-    "applicationId":"APP_999999"
+  "message": "Hello",
+  "destinationAddresses": ["tel:*************"],
+  "password": "YOUR_PASSWORD",
+  "applicationId": "YOUR_APPLICATION_ID"
 }
 ```
 
 ### Response
 
-	
-```
+```json
 {
-    "statusCode":"S1000",
-    "statusDetail":"Success",
-    "messageId":"MSG_000111",
-    "version":"1.0"
+  "statusCode": "S1000",
+  "statusDetail": "Success",
+  "messageId": "MSG_000111",
+  "version": "1.0"
 }
-``` 
+```
 
-### More information on send service.
+### Send Request Parameters
 
-Following are all the request parameters of send service.
+| Parameter | Description | Type | Requirement |
+| --- | --- | --- | --- |
+| `applicationId` | Application ID given during provisioning. | String | Mandatory |
+| `password` | Password given during provisioning. | String | Mandatory |
+| `version` | API version (e.g., `1.0`, `2.0`). If omitted, the latest version is used for validation. | String | Optional |
+| `destinationAddresses` | List of destination addresses, e.g., `tel:5C74B588F97`. `tel:all` addresses the application's subscribed base. Addresses may be masked depending on application type. | List of strings | At least one required |
+| `message` | Message to be sent. Messages exceeding the limit are split. | String | Mandatory |
+| `sourceAddress` | Sender address displayed to users; must be one of the provisioned aliases. | String | Optional |
+| `deliveryStatusRequest` | `0`: delivery report not required; `1`: delivery report required. Defaults to no delivery report. | Enumerated | Optional |
+| `encoding` | `0`: text; `240`: flash SMS; `245`: binary SMS. Defaults to text. Binary message content is hex-encoded. | Enumerated | Optional |
+| `chargingAmount` | Charging amount for variable-charging applications, in system currency with two decimal places (e.g., `78.05`). | Number | Optional |
+| `binaryHeader` | Binary header for advanced messages. | Hexadecimal string | Optional |
 
-| Parameter Name | Description | Type | Mandatory /Optional |
-|-------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
-| application ID | Application ID as given when provisioned. | String | Mandatory |
-| password | Password given when provisioned. | String | Mandatory |
-| version | API version shall be numbered as 1.0, 2.0 etc. | String | OptionalIf not specified shall be validated against the latest version. |
-| destination Address | List of destination addresses should be Hash Codes.tel: for MSISDNtel: 5C74B588F97,tel: 5C74B588F97Address can also have the value – "tel: all" which will in turn be a message to the subscribed base of the application.Note : tel might be a masked number depending on the type of application  
-| String | At least one need to be specified. |
-| message | The message that need to be sent, Messages over the limit shall be broken up. | String | Mandatory |
-| sourceAddress | The sender address to be shown – can be one of the provisioned values in alias list. | String | Optional |
-| delivery Status Request | To indicate the need of Delivery Status Report for the message. | Enumerater 0-DeliveryReportNotRequired 1- DeliveryReportRequired | OptionalIf not specified shall be assumed to be a request without the need for Delivery Report. |
-| encoding | Encoding scheme used in the message. | Enumerated0 – Text240 – Flash SMS245 – Binary SMS | Optional. If not specified taken as Text. If the encoding type is “Binary” then the message content will be represented as hex encoded. |
-| Charging Amount | Charging amount specified for variable charging applications only. | Number to 2 decimal places-shall be considered only in system currency.E.g. 78.05 | Optional |
-| binary Header | For advanced type messages where the binary header shall be sent from the application. | Hexadecimal String | Optional |
+### Comprehensive Send Request
 
-Comprehensive send request with all the parameters
+```json
+{
+  "message": "Hello",
+  "password": "YOUR_PASSWORD",
+  "sourceAddress": "77000",
+  "deliveryStatusRequest": "1",
+  "chargingAmount": "15.75",
+  "destinationAddresses": ["tel:*************"],
+  "applicationId": "YOUR_APPLICATION_ID",
+  "encoding": "245",
+  "version": "1.0",
+  "binaryHeader": "526574697265206170706c69636174696f6e20616e642072656c6561736520524b7320696620666f756e642065787069726564"
+}
+```
 
-			
-				 ```{
-    "message" :"Hello",
-    "password":"password",
-    "sourceAddress":"77000",
-    "deliveryStatusRequest":"1",
-    "chargingAmount":":15.75",
-    "destinationAddresses":["tel:************"],
-    "applicationId":"APP_999999",
-    "encoding":"245",
-    "version":"1.0",
-    "binaryHeader":"526574697265206170706c69636174696f6e20616e642072656 c6561736520524b7320696620666f756e642065787069726564", 
-}``` 
+### Send Response Parameters
 
-Following are all the response parameters of send service.
+| Parameter | Description | Type | Requirement |
+| --- | --- | --- | --- |
+| `version` | API version; matches the request version if specified, otherwise uses the latest version. | String | Mandatory |
+| `requestId` | Unique identifier for the request within Ideamart. | String | Mandatory |
+| `statusCode` | Status code for the overall request. | String | Mandatory |
+| `statusDetail` | Status details for the overall request. | String | Mandatory |
+| `destinationResponses` | Results for each destination, including address, processing timestamp, message ID, status code, and status details. | Collection | Mandatory |
 
-| Parameter Name | Description | Type | Mandatory /Optional |
-|----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------|---------------------|
-| version | API version shall be numbered as 1.0, 2.0 etc. If version was specified in request, same version must be sent in response.If version was not specified in request, then latest version will be specified in response. | String | Mandatory |
-| requestId | requestId to uniquely identify the request within the Ideamart | String | Mandatory |
-| statusCode | The status code for the entire request | String | Mandatory |
-| statusDetail | The status detail for the entire request | String | Mandatory |
-| destinationResponses | The list of responses for the full list of addresses. It will be a collection with individual entry for each element in the address list of the request.AddresstimeStamp – Processed Time stampmessageId – Message IdentifierstatusCode – Status CodestatusDetail – Status detailE.g. given below | String | Mandatory |
+### Sample Send Response
 
-Smaple sample response
+```json
+{
+  "destinationResponses": [
+    {
+      "timeStamp": "20190807100523",
+      "address": "tel:MASKED_SUBSCRIBER_ID",
+      "messageId": "MSG_000111",
+      "statusDetail": "Request was successfully processed.",
+      "statusCode": "S1000"
+    }
+  ],
+  "requestId": "REQ_000111",
+  "statusDetail": "Request was successfully processed.",
+  "version": "1.0",
+  "statusCode": "S1000"
+}
+```
 
-			
-				 ```{
-    "statusCode":"S1000",
-    "statusDetail":"Success",
-    "messageId":"MSG_000111",
-    "version":"1.0"
-}``` 
+### Comprehensive Destination Response
 
-Comprehensive destination response:
+```json
+{
+  "destinationResponses": [
+    {
+      "timeStamp": "20190807100523",
+      "address": "tel:*********************",
+      "messageId": "21908071005227014",
+      "statusDetail": "Request was successfully processed.",
+      "statusCode": "S1000"
+    }
+  ],
+  "requestId": "21908071005227014",
+  "statusDetail": "Request was successfully processed.",
+  "version": "1.0",
+  "statusCode": "S1000"
+}
+```
 
-			
-				 ```{
-    "destinationResponses": [
-        {
-            "timeStamp": "20190807100523",
-            "address": "tel:*********************",
-            "messageId": "21908071005227014",
-            "statusDetail": "Request was successfully processed.",
-            "statusCode": "S1000"
-        }
-    ],
-    "requestId": "21908071005227014",
-    "statusDetail": "Request was successfully processed.",
-    "version": "1.0",
-    "statusCode": "S1000"
-}``` 
+## Receive Service
 
-## Receive service
-
-The message sent by the user to the application is received by this service. Once a message is received, this service returns only a list of SMS messaegs since the previous invocation of the method to receive SMS.
+This service receives messages sent by users to the application. As described in the source documentation, each invocation returns SMS messages since the previous invocation.
 
 ### Request
 
-Following is a sample request for a receive service.
+Sample receive-service request:
 
-			
-				 ```{
-    "message":"my testing message",
-    "sourceAddress":"tel:***************",
-    "requestId":"APP_000001",
-    "encoding":"0",
-    "version":"1.0"
-}``` 
+```json
+{
+  "message": "my testing message",
+  "sourceAddress": "tel:***************",
+  "requestId": "APP_000001",
+  "encoding": "0",
+  "version": "1.0"
+}
+```
 
 ### Response
 
-Sample response of receive service
+Sample receive-service response:
 
-			
-				 ```{
-    "statusCode":"E1308",
-    "statusDetail":"Error during the charging operation"
-}``` 
+```json
+{
+  "statusCode": "E1308",
+  "statusDetail": "Error during the charging operation"
+}
+```
 
-### More information on Receive service
+### Receive Request Parameters
 
-Following are the request parameters of receive service.
+| Parameter | Description | Type | Requirement |
+| --- | --- | --- | --- |
+| `version` | API version (e.g., `1.0`, `2.0`). | String | Mandatory |
+| `applicationId` | Application ID given during provisioning. | String | Mandatory |
+| `sourceAddress` | Source address (masked number). | String | At least one specified |
+| `message` | Message sent by the user. | String | Mandatory |
+| `requestId` | Request identifier within Ideamart. | String | Mandatory |
+| `encoding` | `0`: text; `240`: flash; `245`: binary. Binary content is hex-encoded. | Enumerated | Mandatory |
 
-|  
-Parameter Name  
-|  
-Description  
-|  
-Type  
-|  
-Mandatory /Optional  
-|
-|---------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------|--------------------------------------------|
-| version | API version shall be numbered as 1.0, 2.0 etc | String | Mandatory |
-| applicationId | Application ID as given when provisioned | String | Mandatory |
-| sourceAddress | Source address is a masked number. | String | At least one will be specified |
-| message | Message as sent from the user | String | Mandatory |
-| requestId | Request Identifier in the Ideamart | String | Mandatory |
-| encoding | Encoding scheme used in the Message.If the encoding type is “Binary” then the message content will be represented as hex encoded. | Enumerated0 – Text240-Flash245 – Binary | Mandatory |
+### Comprehensive Receive Request
 
-Comprehensive sample request
+```json
+{
+  "message": "my testing message from app1",
+  "sourceAddress": "tel:**************",
+  "requestId": "APP_000001",
+  "encoding": "0",
+  "version": "1.0"
+}
+```
 
-						
-							 ```{
-    "message":"my testing message from app1",
-    "sourceAddress":"tel:*************", 
-    "requestId":"APP_000001",
-    "encoding":"0", 
-    "version":"1.0"
-}``` 
+### Receive Response Parameters
 
-Following are the response parameters of receive service.
-
-| Parameter Name | Description | Type | Mandatory/Optional |
-|----------------|-----------------------------------------|--------|--------------------|
-| statusCode | The error code for the entire request | String | Mandatory |
-| statusDetail | The error detail for the entire request | String | Mandatory |
-
-​
+| Parameter | Description | Type | Requirement |
+| --- | --- | --- | --- |
+| `statusCode` | Error code for the overall request. | String | Mandatory |
+| `statusDetail` | Error details for the overall request. | String | Mandatory |
 
 ## Delivery Status Report Service
 
-When performing a Send SMS Operation, in the case which an application had requested for a Delivery Response message from the Message Centre, then the Ideamart platform will initiate the Delivery Report service to hand over the Delivery Response message to the application. The requestId should be used to match the MT response with the Delivery Report.
+When an application requests a delivery response during a Send SMS operation, Ideamart initiates the Delivery Status Report service to forward the response from the Message Centre. The `requestId` matches the MT response to the delivery report.
 
 ### Request
 
-Following is a sample request of delivery status report service.
-
-						
-							 ```{
-    "destinationAddress":"tel:************",
-    "timeStamp":"20120113082110", 
-    "requestId":"MSG_000111",
-    "deliveryStatus":"DELIVERED"
-}``` 
+```json
+{
+  "destinationAddress": "tel:************",
+  "timeStamp": "20120113082110",
+  "requestId": "MSG_000111",
+  "deliveryStatus": "DELIVERED"
+}
+```
 
 ### Response
 
-Following is a sample request of delivery status report service.
+```json
+{
+  "statusCode": "S1000",
+  "statusDetail": "Success"
+}
+```
 
-						
-							 ```{
-    "statusCode":"S1000",
-    "statusDetail":"Success"
-}``` 
+### Delivery Status Request Parameters
 
-### More information on Delivery Status Report service
+| Parameter | Description | Type | Requirement |
+| --- | --- | --- | --- |
+| `destinationAddress` | Subscriber address (e.g., `tel:5C74B588F97`). | String | Mandatory |
+| `timeStamp` | Timestamp sent from SMS. Source describes the format as `yyMMddHHmm`, with `yy` (year), `MM` (month), `dd` (day), `HH` (hour), and `mm` (minute). | String | Mandatory |
+| `requestId` | Unique identifier for the request within Ideamart. | String | Mandatory |
+| `deliveryStatus` | SMPP values: `DELIVRD`, `EXPIRED`, `DELETED`, `UNDELIV`, `ACCEPTD`, `UNKNOWN`, `REJECTD`. Ideamart values: `DELIVERED`, `EXPIRED`, `DELETED`, `UNDELIVERABLE`, `ACCEPTED`, `UNKNOWN`, `REJECTED`. | String | Mandatory |
 
-Request parameters of status report service are below.
+### Comprehensive Delivery Status Request
 
-| Parameter Name | Description | Type | Mandatory /Optional |
-|---------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------|---------------------|
-| destination Address | Address of the subscriberE.g. tel: 5C74B588F97 | String | Mandatory |
-| time Stamp | The timestamp sent from the SMS “yyMMddHHmm”yy – last two digits of the year (00-99)MM – month (01-12)dd – day (01-31)HH – hour (00-23)mm- minute (00-59) | String | Mandatory |
-| requestId | requestId to uniquely identify the request within the Ideamart | String | Mandatory |
-| delivery Status | Enum From SMPP Gateway : DELIVRD,EXPIRED, DELETED, UNDELIV, ACCEPTD,UNKNOWN, REJECTDEnum from Ideamart to Application:DELIVERED, EXPIRED, DELETED,UNDELIVERABLE, ACCEPTED,UNKNOWN, REJECTED | String | Mandatory |
+```json
+{
+  "destinationAddress": "tel:****************",
+  "timeStamp": "20120113082110",
+  "requestId": "MSG_000111",
+  "deliveryStatus": "DELIVERED"
+}
+```
 
-Comprehensive sample request
+### Delivery Status Response Parameters
 
-						
-							 ```{
-    "destinationAddress":"tel:***************", 
-    "timeStamp":"20120113082110", 
-    "requestId":"MSG_000111", 
-    "deliveryStatus":"DELIVERED"
-}``` 
-
-Response parameters of status report service are below.
-
-| Parameter Name | Desscription | Type | Mandatory/Optional |
-|----------------|------------------------------------------|--------|--------------------|
-| statusCode | The status code for the entire request | String | Mandatory |
-| statusDetail | The status detail for the entire request | String | Mandatory |
+| Parameter | Description | Type | Requirement |
+| --- | --- | --- | --- |
+| `statusCode` | Status code for the overall request. | String | Mandatory |
+| `statusDetail` | Status details for the overall request. | String | Mandatory |

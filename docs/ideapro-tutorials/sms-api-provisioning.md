@@ -14,8 +14,6 @@ In simpler terms. mobile originated explains the text messages originated from t
 
 It is developer's option to toggle ON/OFF the capability of receiving MO messages depending on the service requirement. If the service is not expected to receive any messages from the user, it is encouraged to toggle it off.
 
-**IMPORTANT**
-
 If the service
 
 1.  is not an exceptional scenario (like a voting) platform which is not possible to use subscription

@@ -2,11 +2,19 @@
 
 For service providers who are not developers, IdeaApp is the ideal solution. IdeaApp is a set of template based APIs where the applications can be created just by filling a form. There are 4 categories of applications which users can create through IdeaApp. - Services - Contact - Voting - Alert
 
-![enter image description here](https://lh3.googleusercontent.com/fGHFAqIOw7Lm_VPqRk4UwmPHOndIfIcy9w6PaY8u_qNvgvh6z39ymRT9-WSZt-vLLM0u2B7bkxI)
+<div class="guided-placeholder">
+  <span class="guided-placeholder__label">Portal guide · Step 01</span>
+  <strong>Open the IdeaApp creation flow</strong>
+  <p>From the Ideamart portal dashboard, select <em>Create Application</em> to begin setting up a template-based IdeaApp.</p>
+</div>
 
 Once you select 'Create Application' you may see the below categories.
 
-![enter image description here](https://lh3.googleusercontent.com/JeU0rObqXgbMYw_-ePHKFiaAAIjLlM1GGFwp5eSHDVATqReanVI0YGPrGEmqLGJxM3hMpYvRfus)
+<div class="guided-placeholder">
+  <span class="guided-placeholder__label">Portal guide · Step 02</span>
+  <strong>Choose the application category</strong>
+  <p>After selecting <em>Create Application</em>, choose the category that matches your use case: Services, Contact, Voting, or Alert.</p>
+</div>
 
 ## SMS
 
