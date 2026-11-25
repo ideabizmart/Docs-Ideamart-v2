@@ -1,70 +1,82 @@
-site_name: Ideamart Documentation
-site_description: Document site for Ideamart
 
+site_name: Ideamart Documentation
+site_description: Official Developer Documentation for Ideamart
+site_url: https://docs.ideamart.io/
+repo_url: https://portal.ideamart.io
+repo_name: Portal Login
 
 nav:
   - Home: index.md
+
   - IdeaPro Tutorials:
-      - "Provisioning": ideapro-tutorials/ideapro-provisioning.md
-      - "SMS API": ideapro-tutorials/sms-api-provisioning.md
-      - "Charging API": ideapro-tutorials/charging-api.md
+      - Provisioning: ideapro-tutorials/ideapro-provisioning.md
+      - SMS API: ideapro-tutorials/sms-api-provisioning.md
+      - Charging API: ideapro-tutorials/charging-api.md
+
   - Developer Docs:
-      - "Charging API": developer-docs/charging-api.md
-      - "SMS API": developer-docs/sms-api.md
-      - "Subscription API": developer-docs/subscription-api.md
-      - "USSD API": developer-docs/ussd-api.md
-      - "OTP API": developer-docs/otp-api.md
-      - "LBS API": developer-docs/lbs-api.md
-      - "Response Codes": developer-docs/response-codes.md
-      - "MCP Integration":
-          - "Common Guide": MCP/guide-common.md
-          - "Ideamart Guide": MCP/guide-ideamart.md
-          - "Client Configuration": MCP/mcp-client-config.md
-          - "Troubleshooting": MCP/troubleshooting.md
+      - Charging API: developer-docs/charging-api.md
+      - SMS API: developer-docs/sms-api.md
+      - Subscription API: developer-docs/subscription-api.md
+      - USSD API: developer-docs/ussd-api.md
+      - OTP API: developer-docs/otp-api.md
+      - LBS API: developer-docs/lbs-api.md
+      - Response Codes: developer-docs/response-codes.md
+      - MCP Integration:
+          - Common Guide: MCP/guide-common.md
+          - Ideamart Guide: MCP/guide-ideamart.md
+          - Client Configuration: MCP/mcp-client-config.md
+          - Troubleshooting: MCP/troubleshooting.md
+
   - IdeaApp Tutorials:
-      - "IdeaApp Introduction": ideaapp-tutorials/introduction.md
-      - "IdeaApp Services": ideaapp-tutorials/services.md
-      - "IdeaApp Alert": ideaapp-tutorials/alert.md
-      - "IdeaApp Contact": ideaapp-tutorials/contact.md
-      - "IdeaApp Voting": ideaapp-tutorials/voting.md
+      - IdeaApp Introduction: ideaapp-tutorials/introduction.md
+      - IdeaApp Services: ideaapp-tutorials/services.md
+      - IdeaApp Alert: ideaapp-tutorials/alert.md
+      - IdeaApp Contact: ideaapp-tutorials/contact.md
+      - IdeaApp Voting: ideaapp-tutorials/voting.md
+
   - Video Tutorials: video-tutorials.md
   - OMNI AI: omni-ai.md
-  - MCP Integration:
-      - "Common Guide": MCP/guide-common.md
-      - "Ideamart Guide": MCP/guide-ideamart.md
-      - "Client Configuration": MCP/mcp-client-config.md
-      - "Troubleshooting": MCP/troubleshooting.md
   - FAQ: faq.md
   - Help/Contact Us: help.md
+  - Skill: skills.md
 
 theme:
   name: material
-  features:
-    - navigation.tabs        # Enables horizontal top menu
-    - navigation.tabs.sticky # Keeps top menu visible on scroll
-    - navigation.sections    # Groups items into collapsible sections in the sidebar
-    - navigation.expand      # Expands sidebar sections by default
-  icon:
-    repo: fontawesome/brands/github
-  palette: 
+  logo: images/logo.png
 
-    # Palette toggle for light mode
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.indexes
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.tabs.link
+    - toc.follow
+
+  icon:
+    repo: fontawesome/solid/right-to-bracket
+
+  palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
       toggle:
-        icon: material/brightness-7 
+        icon: material/brightness-7
         name: Switch to dark mode
-      primary: teal #, [red, pink, purple, deep, purple, indigo, blue, light blue, cyan, teal, green, light green, lime, yellow, amber, orange, deep orange, brown, grey, blue, grey, black, white]
-      accent: cyan # [red, pink, purple, deep, purple, indigo, blue, light, blue, cyan, teal, green, light, green, lime, yellow, amber, orange, deep orange]
 
-    # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: teal #, [red, pink, purple, deep, purple, indigo, blue, light blue, cyan, teal, green, light green, lime, yellow, amber, orange, deep orange, brown, grey, blue, grey, black, white]
-      accent: cyan # [red, pink, purple, deep, purple, indigo, blue, light, blue, cyan, teal, green, light, green, lime, yellow, amber, orange, deep orange]
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
+
+  font:
+    text: Inter
+    code: Roboto Mono
 
 markdown_extensions:
   - md_in_html
@@ -74,21 +86,27 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
-  - tables                  # Enables better table rendering
-  - pymdownx.superfences    # Fixes issues with code blocks
-  - pymdownx.highlight      # Enables syntax highlighting
-  - pymdownx.inlinehilite   # Enables inline code highlighting
-  - pymdownx.extra     
-  
+  - tables
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.extra
+  - attr_list
+  - toc:
+      permalink: true
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/ideamart-chatbot.js
+
 extra:
   generator: false
+
   analytics:
     provider: google
     property: G-SCWBS5Y3CJ
+
   social:
     - icon: fontawesome/brands/youtube
-      link: https://linkedin.com/in/your-profile
-    - icon: fontawesome/brands/instagram
-      link: https://linkedin.com/in/your-profile
-    - icon: fontawesome/brands/facebook
-      link: https://linkedin.com/in/your-profile
+      link: https://www.youtube.com/@IdeaMartLK777

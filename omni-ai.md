@@ -81,8 +81,6 @@ POST /v1/chat/completions
 
 Creates a model response for the given chat conversation. Supports various models with different capabilities for text generation, vision, and audio.
 
-**Note:** Parameter support can differ depending on the model used to generate the response. Different models have different capabilities and supported features.
-
 #### Request Body Parameters
 
 ##### `messages` (Required)
@@ -165,7 +163,7 @@ Each model has different capabilities, performance characteristics, and price po
 
 ##### `n` (Optional)
 - **Type:** `integer` or `null`
-- **Description:** How many chat completion choices to generate for each input message. Note that you will be charged based on the number of generated tokens across all of the choices. Keep n as 1 to minimize costs.
+- **Description:** How many chat completion choices to generate for each input message. You will be charged based on the number of generated tokens across all of the choices. Keep n as 1 to minimize costs.
 - **Default:** `1`
 
 ##### `presence_penalty` (Optional)
@@ -188,7 +186,7 @@ Each model has different capabilities, performance characteristics, and price po
 
 ##### `store` (Optional)
 - **Type:** `boolean` or `null`
-- **Description:** Whether or not to store the output of this chat completion request for use in our model distillation or evals products. Supports text and image inputs. Note: image inputs over 8MB will be dropped.
+- **Description:** Whether or not to store the output of this chat completion request for use in our model distillation or evals products. Supports text and image inputs. Image inputs over 8MB will be dropped.
 - **Default:** `false`
 
 ##### `top_logprobs` (Optional)
@@ -330,7 +328,7 @@ Creates an image given a text prompt. Supports GPT Image 1 model for high-qualit
 
 ##### `partial_images` (Optional)
 - **Type:** `integer`
-- **Description:** The number of partial images to generate. This parameter is used for streaming responses that return partial images. Value must be between 0 and 3. When set to 0, the response will be a single image sent in one streaming event. Note that the final image may be sent before the full number of partial images are generated if the full image is generated more quickly.
+- **Description:** The number of partial images to generate. This parameter is used for streaming responses that return partial images. Value must be between 0 and 3. When set to 0, the response will be a single image sent in one streaming event. The final image may be sent before the full number of partial images are generated if the full image is generated more quickly.
 - **Default:** `0`
 
 ##### `quality` (Optional)
@@ -461,8 +459,6 @@ Rate limit exceeded or token quota exceeded. Please wait before making additiona
 #### 500 - Internal Server Error
 An unexpected error occurred on our servers. Please try again later. If the problem persists, contact our support team.
 
-**Note:** Our team is automatically notified of server errors.
-
 #### 502 - Bad Gateway
 Failed to forward request to the LLM provider. This may be due to provider downtime or connectivity issues.
 
@@ -532,8 +528,6 @@ Developers can view and download the sample code using the Google Drive link bel
 3. Update the configuration with your Omni AI API key.
 4. Refer to the API documentation for endpoint details, request parameters, and response formats.
 5. Test the integration in your development environment before moving to production.
-
-> **Note:** Please ensure that your API key is stored securely and is not committed to any public repository or shared with unauthorized parties.
 
 ## Support
 

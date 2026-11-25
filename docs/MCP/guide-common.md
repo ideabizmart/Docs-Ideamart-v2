@@ -54,8 +54,6 @@ Create or edit the MCP config file for your IDE:
 }
 ```
 
-> **Note:** For VS Code (GitHub Copilot), add `"type": "streamable-http"` to each server entry.
-
 ### Step 3: Start Using
 
 Ask your AI assistant to perform telecom operations:

@@ -1,0 +1,24 @@
+{
+  "inputs": [
+    {
+      "type": "promptString",
+      "id": "ideamart_mcp_token",
+      "description": "Ideamart MCP token",
+      "password": true
+    }
+  ],
+  "mcpServers": {
+    "ideabiz": {
+      "url": "https://mcp.ideamart.io/ideabiz/mcp",
+      "headers": {
+        "Authorization": "Bearer ${input:ideamart_mcp_token}"
+      }
+    },
+    "ideamart": {
+      "url": "https://mcp.ideamart.io/ideamart/mcp",
+      "headers": {
+        "Authorization": "Bearer ${input:ideamart_mcp_token}"
+      }
+    }
+  }
+}

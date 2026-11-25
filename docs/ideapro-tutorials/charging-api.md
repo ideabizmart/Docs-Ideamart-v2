@@ -18,7 +18,7 @@ Once every charging request is executed, the platform generates a charging notif
 
 #### Enable Query Balance Requests
 
-Query Balance feature is only available for the operators in Sri Lanka. For Smart, Ideamart platform does not support the query balance feature. To understand more about the query balance service and its request, response bodies visit developer documentation here [Query Balance](../Charging_API/index.html#query-balance). This can be a status check before calling the charging API so that service provider can make sure the end user has enough balance to pay for the requirement.
+Query Balance feature is only available for the operators in Sri Lanka. For Smart, Ideamart platform does not support the query balance feature. To understand more about the query balance service and its request, response bodies visit developer documentation here [Query Balance](../developer-docs/charging-api.md#query-balance). This can be a status check before calling the charging API so that service provider can make sure the end user has enough balance to pay for the requirement.
 
 #### Subscription
 
