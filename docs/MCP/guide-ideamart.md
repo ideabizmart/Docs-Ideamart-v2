@@ -6,22 +6,15 @@ Connect your AI coding assistant to Ideamart APIs via MCP. Send SMS, manage subs
 
 ---
 
-## Ask the Ideamart Docs Assistant
+## Ask the Ideamart Assistant
 
 The documentation site includes an **Ask Ideamart** chatbot in the bottom-right corner.
 It discovers the `ideamart_docs` MCP tool and uses it to look up guidance about APIs,
 callbacks, status codes, number masking, and integration rules.
 
 The assistant is documentation-only: it does not send SMS, change subscriptions, or
-charge a subscriber. The static webpage sends requests to a same-origin
-`/api/ideamart-mcp` proxy, which adds MCP authorization server-side. Configure the
-deployment secret `IDEAMART_MCP_AUTHORIZATION` as `Bearer <your-mcp-token>`; never put
-that value in browser JavaScript, Markdown, or the repository. The VS Code MCP clients
-can continue using the prompted token in `.vscode/mcp.json`.
-
-If MCP is temporarily unavailable, the assistant falls back to the generated MkDocs search
-index and returns relevant passages from this documentation. This fallback is local to the
-site and does not require another API key or plugin.
+charge a subscriber. It uses the site's default Ideamart MCP configuration automatically,
+so no chatbot settings are required.
 
 ---
 
